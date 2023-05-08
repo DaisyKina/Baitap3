@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require ('express')
 const app = express()
 const users = require('./data/users.json')
 const rootRouter = require('./router/router')
@@ -8,6 +8,9 @@ app.use(express.json())
 
 app.use(rootRouter)
 
-app.listen(port, () => {
-  console.log(`Serser stated at http://localhost:${port}`)
+app.get('/users', (req,res) => res.send ({ users }))
+
+
+app.listen (port, () => {
+    console.log(`A string that you might want port http://localhost:${port}`)
 })
